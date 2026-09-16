@@ -6,6 +6,29 @@
 
   <title>카지노 대일이</title>
 
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5KVNRZRR8"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-B5KVNRZRR8');
+
+    function trackClick(eventName, buttonName, linkUrl) {
+      gtag('event', eventName, {
+        event_category: 'landing_button',
+        button_name: buttonName,
+        link_url: linkUrl,
+        transport_type: 'beacon'
+      });
+    }
+  </script>
+
   <style>
     * {
       box-sizing: border-box;
@@ -95,7 +118,12 @@
       href="https://open.kakao.com/o/g97TJLJi"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="생방송 공지방">
+      aria-label="생방송 공지방"
+      onclick="trackClick(
+        'broadcast_notice_click',
+        '생방송 공지방',
+        this.href
+      )">
     </a>
 
     <!-- 2. 카카오톡 문의 -->
@@ -104,7 +132,12 @@
       href="https://open.kakao.com/o/sENCOE7g"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="카카오톡 문의">
+      aria-label="카카오톡 문의"
+      onclick="trackClick(
+        'kakao_click',
+        '카카오톡 문의',
+        this.href
+      )">
     </a>
 
     <!-- 3. 텔레그램 문의 -->
@@ -113,7 +146,12 @@
       href="https://telegram.me/storyinquiry"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="텔레그램 문의">
+      aria-label="텔레그램 문의"
+      onclick="trackClick(
+        'telegram_click',
+        '텔레그램 문의',
+        this.href
+      )">
     </a>
 
     <!-- 4. 대일이 가족방 -->
@@ -122,7 +160,12 @@
       href="https://open.kakao.com/o/gJqGHqLi"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="대일이 가족방">
+      aria-label="대일이 가족방"
+      onclick="trackClick(
+        'family_room_click',
+        '대일이 가족방',
+        this.href
+      )">
     </a>
 
   </div>
